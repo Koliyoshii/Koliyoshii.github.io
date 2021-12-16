@@ -3,40 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claptrap Animation</title>
 </head>
 <body>
-  <!-- Starting an immersive WebXR session requires user interaction.
-  We start this one with a simple button. -->
-  <button onclick="activateXR()">Start Hello WebXR</button>
+    <p>Say Hello to Claptrap!</p>
 </body>
 <script type="module" src="./claptrap.js"></script>
 </script>
-<script>
-  async function activateXR() {
-    // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
-    const canvas = document.createElement("canvas");
-    document.body.appendChild(canvas);
-    const gl = canvas.getContext("webgl", {xrCompatible: true});
-  
-    // Set up the WebGLRenderer, which handles rendering to the session's base layer.
-    const renderer = new THREE.WebGLRenderer({
-    alpha: true,
-    preserveDrawingBuffer: true,
-    canvas: canvas,
-    context: gl
-    });
-  renderer.autoClear = false;
-
-  // The API directly updates the camera matrices.
-  // Disable matrix auto updates so three.js doesn't attempt
-  // to handle the matrices independently.
-  const camera = new THREE.PerspectiveCamera();
-  camera.matrixAutoUpdate = false;
-  }
-  </script>
-  
 </html>
