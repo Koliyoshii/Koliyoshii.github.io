@@ -114,19 +114,16 @@ function init() {
       gBody.add(gTire);
       gBody.add(gArm);
       //console.log(gBody);
+
       let counter = claptraps.push(gBody);
       console.log("counter: " + counter);
       claptraps.push(gBody);
       console.log("Claptrap Array: " + claptraps);
       console.log("Inhalt Array: " + claptraps[counter - 1]);
-      console.log(
-        "Get Object by Name: " + claptraps[0].getObjectByName("Body")
-      );
 
-      /* let newClaptrap = claptraps[counter - 1];
+      let newClaptrap = claptraps[counter - 1];
       newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
       console.log("New Claptrap: " + newClaptrap);
-      scene.add(newClaptrap); */
 
       /* gBody.traverse(function (child) {
         if (child.isMesh) {
@@ -211,7 +208,7 @@ function init() {
   //Code from WebXR Examples Hit-Test.
   //https://github.com/mrdoob/three.js/blob/master/examples/webxr_ar_hittest.html
   controller = renderer.xr.getController(0);
-  controller.addEventListener("select", onSelect());
+  controller.addEventListener("select", onSelect);
   //controller.addEventListener("select", setRandomPosition, false);
   scene.add(controller);
 
