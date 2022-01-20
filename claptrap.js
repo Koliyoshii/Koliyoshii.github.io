@@ -21,7 +21,6 @@ init();
 animate();
 
 function init() {
-  console.log("Yes, its the new version");
   // create container
   container = document.createElement("div");
   document.body.appendChild(container);
@@ -115,6 +114,7 @@ function init() {
       gBody.add(gTire);
       gBody.add(gArm);
       console.log(gBody);
+      console.log("yes its the new version");
 
       /* // Load Claptrap Tire
       gltfLoader.load(
