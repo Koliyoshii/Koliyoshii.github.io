@@ -114,18 +114,26 @@ function init() {
       gBody.add(gTire);
       gBody.add(gArm);
       //console.log(gBody);
+      let counter = claptraps.push(gBody);
+      console.log("counter: " + counter);
+      claptraps.push(gBody);
+      console.log("Claptrap Array: " + claptraps);
+      console.log("Inhalt Array: " + claptraps[counter - 1]);
+      console.log(
+        "Get Object by Name: " + claptraps[0].getObjectByName("Body")
+      );
 
-      if (gBody.isMesh) {
-        claptraps.push(child);
-        console.log("Claptrap Array: " + claptraps);
-      }
+      /* let newClaptrap = claptraps[counter - 1];
+      newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
+      console.log("New Claptrap: " + newClaptrap);
+      scene.add(newClaptrap); */
 
-      gBody.traverse(function (child) {
+      /* gBody.traverse(function (child) {
         if (child.isMesh) {
           claptraps.push(child);
           console.log("Claptrap Array: " + claptraps);
         }
-      });
+      }); */
 
       /* // Load Claptrap Tire
       gltfLoader.load(
@@ -241,9 +249,11 @@ function onSelect() {
       }
     }); */
 
-    claptraps.push(gBody);
+    let counter = claptraps.push(gBody);
+    console.log("counter: " + counter);
     console.log("Claptraps Array: " + claptraps);
-    let newClaptrap = claptraps.at(-1);
+
+    let newClaptrap = claptraps[counter - 1];
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
     scene.add(newClaptrap);
   }
