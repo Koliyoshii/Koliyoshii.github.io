@@ -115,7 +115,7 @@ function init() {
       gBody.add(gArm);
       //console.log(gBody);
 
-      let counter = claptraps.push(gBody);
+      /* let counter = claptraps.push(gBody);
       console.log("counter: " + counter);
       claptraps.push(gBody);
       console.log("Claptrap Array: " + claptraps);
@@ -123,7 +123,7 @@ function init() {
 
       let newClaptrap = claptraps[counter - 1];
       newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
-      console.log("New Claptrap: " + newClaptrap);
+      console.log("New Claptrap: " + newClaptrap); */
 
       /* gBody.traverse(function (child) {
         if (child.isMesh) {
