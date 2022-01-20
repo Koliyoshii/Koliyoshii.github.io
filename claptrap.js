@@ -85,7 +85,7 @@ function init() {
     function (gltf) {
       //console.log(gltf);
       gltfScene = gltf.scene;
-      gltfScene.scale.set(0.05, 0.05, 0.05); //scale 3D model
+      gltfScene.scale.set(0.01, 0.01, 0.01); //scale 3D model
       //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
 
       // Add coordinate systems and plane normal
