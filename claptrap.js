@@ -93,28 +93,39 @@ function init() {
       gltfScene.add(axesHelperScene);
       gltfScene.add(positionalSound); //Sound wird hinzugefügt
 
-      gltfScene.traverse(function (child) {
+      /* gltfScene.traverse(function (child) {
         console.log(child);
         console.log(child.name);
-      });
+      }); */
 
       gBody = gltfScene.getObjectByName("Body");
       console.log(gBody);
 
       gArm = gltfScene.getObjectByName("Arme");
-      console.log(gArm);
+      //console.log(gArm);
       //position of the arms with regards to its body
       gArm.position.z = -0.1;
       gArm.position.y = 0.35;
       gArm.rotation.x = -3;
 
       gTire = gltfScene.getObjectByName("Reifen");
-      console.log(gTire);
+      //console.log(gTire);
 
       gBody.add(gTire);
       gBody.add(gArm);
-      console.log(gBody);
-      console.log("yes its the new version");
+      //console.log(gBody);
+
+      if (gBody.isMesh) {
+        claptraps.push(child);
+        console.log("Claptrap Array: " + claptraps);
+      }
+
+      gBody.traverse(function (child) {
+        if (child.isMesh) {
+          claptraps.push(child);
+          console.log("Claptrap Array: " + claptraps);
+        }
+      });
 
       /* // Load Claptrap Tire
       gltfLoader.load(
@@ -223,10 +234,15 @@ const geometry = new THREE.CylinderGeometry(0.1, 0.1, 0.2, 32).translate(
 //Function to spawn claptrap
 function onSelect() {
   if (findTarget.visible) {
-    if (gBody.isMesh) {
-      claptraps.push(gBody);
-    }
+    /* gBody.traverse(function (child) {
+      if (child.isMesh) {
+        claptraps.push(child);
+        console.log("Claptrap Array: " + claptraps);
+      }
+    }); */
 
+    claptraps.push(gBody);
+    console.log("Claptraps Array: " + claptraps);
     let newClaptrap = claptraps.at(-1);
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
     scene.add(newClaptrap);
