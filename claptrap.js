@@ -240,11 +240,12 @@ const geometry = new THREE.CylinderGeometry(0.1, 0.1, 0.2, 32).translate(
 //Function to spawn claptrap
 function onSelect() {
   if (findTarget.visible) {
-    let counter = claptraps.push(gBody);
-    console.log("counter: " + counter);
-    console.log("Claptraps Array: " + claptraps);
+    // let counter = claptraps.push(gBody);
+    // console.log("counter: " + counter);
+    // console.log("Claptraps Array: " + claptraps);
 
-    let newClaptrap = claptraps[counter - 1];
+    // let newClaptrap = claptraps[counter - 1];
+    let newClaptrap = Object.assign({}, gBody);
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
     newClaptrap.scale.set(0.01, 0.01, 0.01);
     scene.add(newClaptrap);
