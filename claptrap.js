@@ -21,6 +21,7 @@ init();
 animate();
 
 function init() {
+  console.log("Yes, its the new version");
   // create container
   container = document.createElement("div");
   document.body.appendChild(container);
