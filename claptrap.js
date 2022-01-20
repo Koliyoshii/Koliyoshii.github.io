@@ -2,7 +2,16 @@ import * as THREE from "./build/three.module.js";
 import { GLTFLoader } from "./GLTFLoader.js";
 import { ARButton } from "./ARButton.js";
 
-let gTire, gArm, gBody, gltfScene, renderer, light, camera, scene;
+let gTire,
+  gArm,
+  gBody,
+  gltfScene,
+  gClaptrapMesh,
+  renderer,
+  light,
+  camera,
+  scene,
+  mesh;
 let claptraps = [];
 let container;
 let findTarget;
@@ -93,10 +102,13 @@ function init() {
       gltfScene.add(axesHelperScene);
       gltfScene.add(positionalSound); //Sound wird hinzugefügt
 
-      /* gltfScene.traverse(function (child) {
-        console.log(child);
-        console.log(child.name);
-      }); */
+      gltfScene.traverse(function (child) {
+        console.log("child: " + child);
+        if (child.isMesh) {
+          mesh = new THREE.Mesh(child.geometry, child.material);
+        }
+      });
+      console.log("Mesh: " + mesh);
 
       gBody = gltfScene.getObjectByName("Body");
       console.log(gBody);
@@ -245,10 +257,16 @@ function onSelect() {
     // console.log("Claptraps Array: " + claptraps);
 
     // let newClaptrap = claptraps[counter - 1];
-    let newClaptrap = Object.assign({}, gBody);
+
+    var refObject = mesh;
+    var clone = refObject;
+    // here you can apply transformations, for this clone only
+    scene.add(clone);
+
+    /* let newClaptrap = Object.assign({}, gBody);
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
     newClaptrap.scale.set(0.05, 0.05, 0.05);
-    scene.add(newClaptrap);
+    scene.add(newClaptrap); */
 
     /* const material = new THREE.MeshPhongMaterial({
       color: 0xffffff * Math.random(),
