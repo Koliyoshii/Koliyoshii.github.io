@@ -261,6 +261,8 @@ function onSelect() {
     var refObject = mesh;
     var clone = refObject;
     // here you can apply transformations, for this clone only
+    clone.position.setFromMatrixPosition(findTarget.matrix);
+    clone.scale.set(0.05, 0.05, 0.05);
     scene.add(clone);
 
     /* let newClaptrap = Object.assign({}, gBody);
