@@ -247,7 +247,7 @@ function onSelect() {
     // let newClaptrap = claptraps[counter - 1];
     let newClaptrap = Object.assign({}, gBody);
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
-    newClaptrap.scale.set(0.01, 0.01, 0.01);
+    newClaptrap.scale.set(0.05, 0.05, 0.05);
     scene.add(newClaptrap);
 
     /* const material = new THREE.MeshPhongMaterial({
