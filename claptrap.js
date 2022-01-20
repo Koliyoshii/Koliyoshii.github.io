@@ -211,7 +211,7 @@ function init() {
   //Code from WebXR Examples Hit-Test.
   //https://github.com/mrdoob/three.js/blob/master/examples/webxr_ar_hittest.html
   controller = renderer.xr.getController(0);
-  controller.addEventListener("select", onSelect);
+  controller.addEventListener("select", onSelect());
   //controller.addEventListener("select", setRandomPosition, false);
   scene.add(controller);
 
