@@ -240,21 +240,21 @@ const geometry = new THREE.CylinderGeometry(0.1, 0.1, 0.2, 32).translate(
 //Function to spawn claptrap
 function onSelect() {
   if (findTarget.visible) {
-    /*     let counter = claptraps.push(gBody);
+    let counter = claptraps.push(gBody);
     console.log("counter: " + counter);
     console.log("Claptraps Array: " + claptraps);
 
     let newClaptrap = claptraps[counter - 1];
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
-    scene.add(newClaptrap); */
+    scene.add(newClaptrap);
 
-    const material = new THREE.MeshPhongMaterial({
+    /* const material = new THREE.MeshPhongMaterial({
       color: 0xffffff * Math.random(),
     });
     const mesh = new THREE.Mesh(geometry, material);
     mesh.position.setFromMatrixPosition(findTarget.matrix);
     mesh.scale.y = Math.random() * 2 + 1;
-    scene.add(mesh);
+    scene.add(mesh); */
   }
   /* if (reticle.visible) {
     const material = new THREE.MeshPhongMaterial({
