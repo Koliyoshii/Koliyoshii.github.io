@@ -242,13 +242,6 @@ const geometry = new THREE.CylinderGeometry(0.1, 0.1, 0.2, 32).translate(
 //Function to spawn claptrap
 function onSelect() {
   if (findTarget.visible) {
-    /* gBody.traverse(function (child) {
-      if (child.isMesh) {
-        claptraps.push(child);
-        console.log("Claptrap Array: " + claptraps);
-      }
-    }); */
-
     /*     let counter = claptraps.push(gBody);
     console.log("counter: " + counter);
     console.log("Claptraps Array: " + claptraps);
@@ -261,7 +254,7 @@ function onSelect() {
       color: 0xffffff * Math.random(),
     });
     const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.setFromMatrixPosition(reticle.matrix);
+    mesh.position.setFromMatrixPosition(findTarget.matrix);
     mesh.scale.y = Math.random() * 2 + 1;
     scene.add(mesh);
   }
