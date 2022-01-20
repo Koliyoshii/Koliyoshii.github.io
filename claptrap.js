@@ -217,6 +217,7 @@ function init() {
     new THREE.RingGeometry(0.03, 0.04, 32).rotateX(-Math.PI / 2),
     new THREE.MeshBasicMaterial()
   );
+  console.log(findTarget);
   findTarget.matrixAutoUpdate = false;
   findTarget.visible = false;
   scene.add(findTarget);
