@@ -249,13 +249,18 @@ function onSelect() {
       }
     }); */
 
-    let counter = claptraps.push(gBody);
+    /*     let counter = claptraps.push(gBody);
     console.log("counter: " + counter);
     console.log("Claptraps Array: " + claptraps);
 
     let newClaptrap = claptraps[counter - 1];
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
-    scene.add(newClaptrap);
+    scene.add(newClaptrap); */
+
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.position.setFromMatrixPosition(reticle.matrix);
+    mesh.scale.y = Math.random() * 2 + 1;
+    scene.add(mesh);
   }
   /* if (reticle.visible) {
     const material = new THREE.MeshPhongMaterial({
