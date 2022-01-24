@@ -249,10 +249,11 @@ function onSelect() {
     // console.log("Claptraps Array: " + claptraps);
 
     // let newClaptrap = claptraps[counter - 1];
-
+    let claptraps = [];
     let refObject = gBody;
     let clone = refObject;
-    let newClaptrap = Object.assign({}, gBody);
+    let length = claptraps.push[clone];
+    let newClaptrap = claptraps[length - 1];
 
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
     newClaptrap.scale.set(0.1, 0.1, 0.1);
