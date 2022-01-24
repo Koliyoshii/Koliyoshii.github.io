@@ -250,13 +250,13 @@ function onSelect() {
 
     // let newClaptrap = claptraps[counter - 1];
 
-    var refObject = gBody;
-    var clone = refObject;
+    let refObject = gBody;
+    let clone = refObject;
     let newClaptrap = Object.assign({}, gBody);
 
-    newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
-    newClaptrap.scale.set(0.1, 0.1, 0.1);
-    scene.add(gBody);
+    clone.position.setFromMatrixPosition(findTarget.matrix);
+    clone.scale.set(0.1, 0.1, 0.1);
+    scene.add(clone);
 
     /* let newClaptrap = Object.assign({}, gBody);
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
