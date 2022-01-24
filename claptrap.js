@@ -86,6 +86,8 @@ function init() {
       //console.log(gltf);
       gltfScene = gltf.scene;
       gltfScene.scale.set(0.01, 0.01, 0.01); //scale 3D model
+      let ClaptrapScene = gltfScene;
+      let ClaptrapScene1 = gltf.scene.clone();
       //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
       //console.log(gltfScene);
       // Add coordinate systems and plane normal
@@ -99,11 +101,14 @@ function init() {
 
       let claptraps = ["Hello Claptrap"];
       console.log(claptraps[0]);
+      claptraps.push(ClaptrapScene);
+      claptraps.push(ClaptrapScene1);
       let refObject = gBody;
       let clone = refObject;
       let newClaptrap = new claptrap();
       claptraps.push[newClaptrap];
       console.log(claptraps);
+
       //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
       //position of the arms with regards to its body
