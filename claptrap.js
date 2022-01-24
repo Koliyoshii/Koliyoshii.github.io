@@ -109,13 +109,13 @@ function init() {
       //gBody.add(gArm);
       //console.log(gBody);
       //create an empty 'container'/Mesh
-      let claptrapContainer = new THREE.Object3D();
+      /* let claptrapContainer = new THREE.Object3D();
       gBody.traverse(function (child) {
         //console.log(child);
         if (child.isMesh) {
           claptrapContainer.add(child);
         }
-      });
+      }); */
       //console.log(claptrapContainer);
       //console.log(gBody);
 
@@ -249,7 +249,7 @@ function onSelect() {
 
     // let newClaptrap = claptraps[counter - 1];
 
-    var refObject = mesh;
+    var refObject = gBody;
     var clone = refObject;
     // here you can apply transformations, for this clone only
     clone.position.setFromMatrixPosition(findTarget.matrix);
