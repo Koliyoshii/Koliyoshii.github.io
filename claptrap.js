@@ -97,7 +97,8 @@ function init() {
       gBody.scale.set;
       //console.log(gBody);
 
-      let claptraps = [];
+      let claptraps = ["Hello Claptrap"];
+      console.log(claptraps[0]);
       let refObject = gBody;
       let clone = refObject;
       claptraps.push[clone];
