@@ -98,9 +98,7 @@ function init() {
       gBody = gltfScene.getObjectByName("Body");
       gBody.scale.set;
       //console.log(gBody);
-
-      let claptraps = ["Hello Claptrap"];
-      console.log(claptraps[0]);
+      let claptraps = [];
       claptraps.push(ClaptrapScene);
       claptraps.push(ClaptrapScene1);
       let refObject = gBody;
