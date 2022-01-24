@@ -39,12 +39,6 @@ function init() {
     nearPlane,
     farPlane
   );
-  //camera.matrixAutoUpdate = false;
-  //camera.position.set(0, 8, 30);
-
-  // add fog
-  const fog = new THREE.Fog("gray", 1, 90);
-  scene.fog = fog;
 
   // LIGHTS
   // directional lighting
@@ -85,8 +79,8 @@ function init() {
     function (gltf) {
       //Save the GLTF Scene in a global variable for cloning later
       gltfScene = gltf.scene;
-      gltfScene.scale.set(0.2, 0.2, 0.2); //scale 3D model
-      //gltfScene.add(positionalSound); //Sound wird hinzugefügt
+      gltfScene.scale.set(0.1, 0.1, 0.1); //scale 3D model
+      gltfScene.add(positionalSound); //Sound wird hinzugefügt
 
       gBody = gltfScene.getObjectByName("Body");
       //gArm = gltfScene.getObjectByName("Arme");
@@ -95,7 +89,7 @@ function init() {
   );
 
   //Implement sound
-  // create an AudioListener and add it to the camera
+  //create an AudioListener and add it to the camera
   const listener = new THREE.AudioListener();
   camera.add(listener);
 
@@ -109,7 +103,7 @@ function init() {
   const positionalAudioLoader = new THREE.AudioLoader();
   positionalAudioLoader.load("sounds/ende.wav", function (buffer) {
     positionalSound.setBuffer(buffer);
-    positionalSound.setRefDistance(0.05);
+    positionalSound.setRefDistance(0.0005);
     positionalSound.setLoop(true);
     positionalSound.play(0);
   });
