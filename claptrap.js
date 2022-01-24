@@ -87,7 +87,7 @@ function init() {
       gltfScene = gltf.scene;
       gltfScene.scale.set(0.01, 0.01, 0.01); //scale 3D model
       //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
-      console.log(gltfScene);
+      //console.log(gltfScene);
       // Add coordinate systems and plane normal
       //const axesHelperScene = new THREE.AxesHelper(5);
       //gltfScene.add(axesHelperScene);
@@ -95,7 +95,7 @@ function init() {
 
       gBody = gltfScene.getObjectByName("Body");
       gBody.scale.set;
-      console.log(gBody);
+      //console.log(gBody);
 
       let claptraps = [];
       let refObject = gBody;
