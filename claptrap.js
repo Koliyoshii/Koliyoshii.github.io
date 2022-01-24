@@ -95,17 +95,13 @@ function init() {
       //gltfScene.add(axesHelperScene);
       //gltfScene.add(positionalSound); //Sound wird hinzugefügt
 
-      /* gBody = gltfScene.getObjectByName("Body");
+      gBody = gltfScene.getObjectByName("Body");
       gBody.scale.set;
       //console.log(gBody);
       let claptraps = [];
       claptraps.push(ClaptrapScene);
       claptraps.push(ClaptrapScene1);
-      let refObject = gBody;
-      let clone = refObject;
-      let newClaptrap = new claptrap();
-      claptraps.push[newClaptrap];
-      console.log(claptraps); */
+      console.log(claptraps);
 
       //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
