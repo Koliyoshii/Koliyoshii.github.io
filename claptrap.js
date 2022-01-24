@@ -80,7 +80,7 @@ function init() {
   const gltfLoader = new GLTFLoader();
   gltfLoader.load(
     // resource URL
-    "./claptrap_final.gltf",
+    "./claptrap1.gltf",
     // called when the resource is loaded
     function (gltf) {
       //console.log(gltf);
