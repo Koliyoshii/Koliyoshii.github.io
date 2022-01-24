@@ -2,17 +2,8 @@ import * as THREE from "./build/three.module.js";
 import { GLTFLoader } from "./GLTFLoader.js";
 import { ARButton } from "./ARButton.js";
 
-let gTire,
-  gArm,
-  gBody,
-  gltfScene,
-  gClaptrapMesh,
-  renderer,
-  light,
-  camera,
-  scene,
-  mesh;
-let claptraps = [];
+let gTire, gArm, gBody, gltfScene, renderer, light, camera, scene, mesh;
+let meshes = [];
 let container;
 let findTarget;
 let hitTestSource = null;
@@ -89,30 +80,20 @@ function init() {
   const gltfLoader = new GLTFLoader();
   gltfLoader.load(
     // resource URL
-    "./claptrap.gltf",
+    "./test_2.gltf",
     // called when the resource is loaded
     function (gltf) {
-      //console.log(gltf);
+      console.log(gltf);
       gltfScene = gltf.scene;
       gltfScene.scale.set(0.01, 0.01, 0.01); //scale 3D model
       //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
 
       // Add coordinate systems and plane normal
-      const axesHelperScene = new THREE.AxesHelper(5);
-      gltfScene.add(axesHelperScene);
-      gltfScene.add(positionalSound); //Sound wird hinzugefügt
-
-      gltfScene.traverse(function (child) {
-        console.log("child: " + child);
-        if (child.isMesh) {
-          mesh = new THREE.Mesh(child.geometry, child.material);
-        }
-      });
-      console.log("Mesh: " + mesh);
+      //const axesHelperScene = new THREE.AxesHelper(5);
+      //gltfScene.add(axesHelperScene);
+      //gltfScene.add(positionalSound); //Sound wird hinzugefügt
 
       gBody = gltfScene.getObjectByName("Body");
-      console.log(gBody);
-
       gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
       //position of the arms with regards to its body
@@ -125,6 +106,16 @@ function init() {
 
       gBody.add(gTire);
       gBody.add(gArm);
+      console.log(gBody);
+      //create an empty 'container'/Mesh
+      let claptrapContainer = new THREE.Object3D();
+      gBody.traverse(function (child) {
+        //console.log(child);
+        if (child.isMesh) {
+          claptrapContainer.add(child);
+        }
+      });
+      //console.log(claptrapContainer);
       //console.log(gBody);
 
       /* let counter = claptraps.push(gBody);
@@ -189,7 +180,7 @@ function init() {
           //give global gArm the arm
           gArm = gltf.scene;
 
-          //add the arm tothe global claptrap model
+          //add the arm to the global claptrap model
           gClaptrapModel.add(arm);
         }
       ); */
@@ -229,7 +220,6 @@ function init() {
     new THREE.RingGeometry(0.03, 0.04, 32).rotateX(-Math.PI / 2),
     new THREE.MeshBasicMaterial()
   );
-  console.log(findTarget);
   findTarget.matrixAutoUpdate = false;
   findTarget.visible = false;
   scene.add(findTarget);
