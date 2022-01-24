@@ -98,7 +98,6 @@ function init() {
       gBody = gltfScene.getObjectByName("Body");
       gBody.scale.set;
       //console.log(gBody);
-      let claptraps = [];
       claptraps.push(ClaptrapScene);
       claptraps.push(ClaptrapScene1);
       console.log(claptraps);
@@ -243,11 +242,6 @@ function onWindowResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-const geometry = new THREE.CylinderGeometry(0.1, 0.1, 0.2, 32).translate(
-  0,
-  0.1,
-  0
-);
 //Function to spawn claptrap
 function onSelect() {
   if (findTarget.visible) {
