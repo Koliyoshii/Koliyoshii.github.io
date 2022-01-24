@@ -101,6 +101,7 @@ function init() {
       claptraps.push(ClaptrapScene);
       claptraps.push(ClaptrapScene1);
       console.log(claptraps);
+      console.log("update");
 
       //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
@@ -246,7 +247,7 @@ function onWindowResize() {
 function onSelect() {
   if (findTarget.visible) {
     let newClaptrapScene = gltfScene.clone();
-    claptraps.push[newClaptrapScene];
+    claptraps.push(newClaptrapScene);
     newClaptrapScene.position.setFromMatrixPosition(findTarget.matrix);
     scene.add(claptraps[claptraps.length - 1]);
 
