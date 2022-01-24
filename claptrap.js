@@ -83,9 +83,9 @@ function init() {
     "./claptrap.gltf",
     // called when the resource is loaded
     function (gltf) {
-      //save the scene in a global Variable to use it later for
+      //console.log(gltf);
       gltfScene = gltf.scene;
-      gltfScene.scale.set(0.1, 0.1, 0.1); //scale 3D model
+      gltfScene.scale.set(0.01, 0.01, 0.01); //scale 3D model
       let ClaptrapScene = gltfScene;
       let ClaptrapScene1 = gltf.scene.clone();
       //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
@@ -252,14 +252,26 @@ const geometry = new THREE.CylinderGeometry(0.1, 0.1, 0.2, 32).translate(
 //Function to spawn claptrap
 function onSelect() {
   if (findTarget.visible) {
-    //Clone the scene from GLTF Loader
     let newClaptrapScene = gltfScene.clone();
-    //Save the scene in an array
     claptraps.push[newClaptrapScene];
-    //give the new Scene the position of findTarget (the ring for target Hitter)
     newClaptrapScene.position.setFromMatrixPosition(findTarget.matrix);
-    scene.add(claptraps[claptraps.legth - 1]);
+    newClaptrapScene.scale.set(0.1, 0.1, 0.1);
+    scene.add(claptraps[claptraps.length - 1]);
+
+    /* let newClaptrap = Object.assign({}, gBody);
+    newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
+    newClaptrap.scale.set(0.05, 0.05, 0.05);
+    scene.add(newClaptrap); */
   }
+  /* if (reticle.visible) {
+    const material = new THREE.MeshPhongMaterial({
+      color: 0xffffff * Math.random(),
+    });
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.position.setFromMatrixPosition(reticle.matrix);
+    mesh.scale.y = Math.random() * 2 + 1;
+    scene.add(mesh);
+  } */
 } //end function onSelect
 
 //Function to generate random direction vector for claptrap movement
