@@ -101,10 +101,9 @@ function init() {
       console.log(claptraps[0]);
       let refObject = gBody;
       let clone = refObject;
-      claptraps.push[new claptrap()];
+      let newClaptrap = new claptrap();
+      claptraps.push[newClaptrap];
       console.log(claptraps);
-      let newClaptrap = claptraps[claptraps.length];
-      console.log(newClaptrap);
       //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
       //position of the arms with regards to its body
