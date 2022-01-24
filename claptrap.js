@@ -102,6 +102,7 @@ function init() {
       claptraps.push(ClaptrapScene);
       claptraps.push(ClaptrapScene1);
       console.log(claptraps);
+      console.log("update");
 
       //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
