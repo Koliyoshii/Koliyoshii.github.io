@@ -80,7 +80,7 @@ function init() {
   const gltfLoader = new GLTFLoader();
   gltfLoader.load(
     // resource URL
-    "./claptrap_eneu.gltf",
+    "./claptrap_final.gltf",
     // called when the resource is loaded
     function (gltf) {
       //console.log(gltf);
@@ -92,7 +92,7 @@ function init() {
       //const axesHelperScene = new THREE.AxesHelper(5);
       //gltfScene.add(axesHelperScene);
       //gltfScene.add(positionalSound); //Sound wird hinzugefügt
-      
+
       gBody = gltfScene.getObjectByName("Body");
       console.log(gBody);
       //gArm = gltfScene.getObjectByName("Arme");
