@@ -83,7 +83,7 @@ function init() {
     "./test_2.gltf",
     // called when the resource is loaded
     function (gltf) {
-      console.log(gltf);
+      //console.log(gltf);
       gltfScene = gltf.scene;
       gltfScene.scale.set(0.01, 0.01, 0.01); //scale 3D model
       //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
