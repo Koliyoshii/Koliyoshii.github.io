@@ -87,26 +87,27 @@ function init() {
       gltfScene = gltf.scene;
       gltfScene.scale.set(0.01, 0.01, 0.01); //scale 3D model
       //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
-
+      console.log(gltfScene);
       // Add coordinate systems and plane normal
       //const axesHelperScene = new THREE.AxesHelper(5);
       //gltfScene.add(axesHelperScene);
       //gltfScene.add(positionalSound); //Sound wird hinzugefügt
-
+      
       gBody = gltfScene.getObjectByName("Body");
-      gArm = gltfScene.getObjectByName("Arme");
+      console.log(gBody);
+      //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
       //position of the arms with regards to its body
-      gArm.position.z = -0.1;
-      gArm.position.y = 0.35;
-      gArm.rotation.x = -3;
+      //gArm.position.z = -0.1;
+      //gArm.position.y = 0.35;
+      //gArm.rotation.x = -3;
 
-      gTire = gltfScene.getObjectByName("Reifen");
+      //gTire = gltfScene.getObjectByName("Reifen");
       //console.log(gTire);
 
-      gBody.add(gTire);
-      gBody.add(gArm);
-      console.log(gBody);
+      //gBody.add(gTire);
+      //gBody.add(gArm);
+      //console.log(gBody);
       //create an empty 'container'/Mesh
       let claptrapContainer = new THREE.Object3D();
       gBody.traverse(function (child) {
