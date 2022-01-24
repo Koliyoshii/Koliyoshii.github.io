@@ -258,7 +258,7 @@ function onSelect() {
     let newClaptrapScene = gltfScene.clone();
     claptraps.push[newClaptrapScene];
     newClaptrapScene.position.setFromMatrixPosition(findTarget.matrix);
-    newClaptrapScenescale.set(0.1, 0.1, 0.1);
+    newClaptrapScene.scale.set(0.1, 0.1, 0.1);
     scene.add(newClaptrapScene);
 
     /* let newClaptrap = Object.assign({}, gBody);
