@@ -83,14 +83,117 @@ function init() {
     "./claptrap.gltf",
     // called when the resource is loaded
     function (gltf) {
-      //save the scene in a global Variable to use it later for cloning
+      //save the scene in a global Variable to use it later for
       gltfScene = gltf.scene;
       gltfScene.scale.set(0.1, 0.1, 0.1); //scale 3D model
-      gltfScene.add(positionalSound); //add positional Sound to scene
+      let ClaptrapScene = gltfScene;
+      let ClaptrapScene1 = gltf.scene.clone();
+      //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
+      //console.log(gltfScene);
+      // Add coordinate systems and plane normal
+      //const axesHelperScene = new THREE.AxesHelper(5);
+      //gltfScene.add(axesHelperScene);
+      //gltfScene.add(positionalSound); //Sound wird hinzugefügt
 
       gBody = gltfScene.getObjectByName("Body");
-      gArm = gltfScene.getObjectByName("Arme");
-      gTire = gltfScene.getObjectByName("Reifen");
+      gBody.scale.set;
+      //console.log(gBody);
+      let claptraps = [];
+      claptraps.push(ClaptrapScene);
+      claptraps.push(ClaptrapScene1);
+      console.log(claptraps);
+      console.log("update");
+
+      //gArm = gltfScene.getObjectByName("Arme");
+      //console.log(gArm);
+      //position of the arms with regards to its body
+      //gArm.position.z = -0.1;
+      //gArm.position.y = 0.35;
+      //gArm.rotation.x = -3;
+
+      //gTire = gltfScene.getObjectByName("Reifen");
+      //console.log(gTire);
+
+      //gBody.add(gTire);
+      //gBody.add(gArm);
+      //console.log(gBody);
+      //create an empty 'container'/Mesh
+      /* let claptrapContainer = new THREE.Object3D();
+      gBody.traverse(function (child) {
+        //console.log(child);
+        if (child.isMesh) {
+          claptrapContainer.add(child);
+        }
+      }); */
+      //console.log(claptrapContainer);
+      //console.log(gBody);
+
+      /* let counter = claptraps.push(gBody);
+      console.log("counter: " + counter);
+      claptraps.push(gBody);
+      console.log("Claptrap Array: " + claptraps);
+      console.log("Inhalt Array: " + claptraps[counter - 1]);
+
+      let newClaptrap = claptraps[counter - 1];
+      newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
+      console.log("New Claptrap: " + newClaptrap); */
+
+      /* gBody.traverse(function (child) {
+        if (child.isMesh) {
+          claptraps.push(child);
+          console.log("Claptrap Array: " + claptraps);
+        }
+      }); */
+
+      /* // Load Claptrap Tire
+      gltfLoader.load(
+        // resource URL
+        "./models/reifen.gltf",
+        // called when the resource is loaded
+        function (gltf) {
+          console.log(gltf);
+          const tire = gltf.scene;
+
+          //position of the tire with regards to its body
+          tire.position.y = -1.675;
+          tire.position.z = -0.03;
+
+          // Add coordinate systems and plane normal
+          const axesHelperScene = new THREE.AxesHelper(5); //Achsen werden angezeigt
+          tire.add(axesHelperScene);
+
+          //give global gTire the tire
+          gTire = gltf.scene;
+
+          //add the tire to the global claptrap model
+          gClaptrapModel.add(tire);
+        }
+      ); */
+
+      /* // Load Claptrap Arm
+      gltfLoader.load(
+        // resource URL
+        "./models/arm.gltf",
+        // called when the resource is loaded
+        function (gltf) {
+          console.log(gltf);
+          const arm = gltf.scene; //arm wird der Szene hinzugefügt
+
+          //position of the arm with regards to its body
+          arm.position.z = -0.1;
+          arm.position.y = 0.35;
+
+          // Add coordinate systems and plane normal
+          const axesHelperScene = new THREE.AxesHelper(10);
+          arm.add(axesHelperScene);
+
+          //give global gArm the arm
+          gArm = gltf.scene;
+
+          //add the arm to the global claptrap model
+          gClaptrapModel.add(arm);
+        }
+      ); */
     }
   );
 
@@ -137,10 +240,16 @@ function init() {
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
+
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-//Function to clone GLTFScene and spawn claptrap
+const geometry = new THREE.CylinderGeometry(0.1, 0.1, 0.2, 32).translate(
+  0,
+  0.1,
+  0
+);
+//Function to spawn claptrap
 function onSelect() {
   if (findTarget.visible) {
     //Clone the scene from GLTF Loader
@@ -149,7 +258,7 @@ function onSelect() {
     claptraps.push[newClaptrapScene];
     //give the new Scene the position of findTarget (the ring for target Hitter)
     newClaptrapScene.position.setFromMatrixPosition(findTarget.matrix);
-    scene.add(claptraps[claptraps.length - 1]);
+    scene.add(claptraps[claptraps.legth - 1]);
   }
 } //end function onSelect
 
