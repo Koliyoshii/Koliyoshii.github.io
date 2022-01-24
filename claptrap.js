@@ -103,7 +103,7 @@ function init() {
       let clone = refObject;
       claptraps.push[clone];
       console.log(claptraps);
-      let newClaptrap = claptraps[claptraps.length - 1];
+      let newClaptrap = claptraps[claptraps.length];
       console.log(newClaptrap);
       //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
