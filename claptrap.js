@@ -102,7 +102,6 @@ function init() {
       claptraps.push(ClaptrapScene);
       claptraps.push(ClaptrapScene1);
       console.log(claptraps);
-      console.log("update");
 
       //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
@@ -255,7 +254,6 @@ function onSelect() {
     let newClaptrapScene = gltfScene.clone();
     claptraps.push[newClaptrapScene];
     newClaptrapScene.position.setFromMatrixPosition(findTarget.matrix);
-    newClaptrapScene.scale.set(0.1, 0.1, 0.1);
     scene.add(claptraps[claptraps.length - 1]);
 
     /* let newClaptrap = Object.assign({}, gBody);
