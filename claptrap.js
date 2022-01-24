@@ -101,7 +101,7 @@ function init() {
       console.log(claptraps[0]);
       let refObject = gBody;
       let clone = refObject;
-      claptraps.push[clone];
+      claptraps.push[new claptrap()];
       console.log(claptraps);
       let newClaptrap = claptraps[claptraps.length];
       console.log(newClaptrap);
@@ -283,6 +283,33 @@ function onSelect() {
     scene.add(mesh);
   } */
 } //end function onSelect
+
+let gNewClaptrap;
+function claptrap() {
+  // GEOMETRY gltf Loader
+  const gltfLoader = new GLTFLoader();
+  gltfLoader.load(
+    // resource URL
+    "./claptrap.gltf",
+    // called when the resource is loaded
+    function (gltf) {
+      //console.log(gltf);
+      gltfScene = gltf.scene;
+      gltfScene.scale.set(0.01, 0.01, 0.01); //scale 3D model
+      //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
+      //console.log(gltfScene);
+      // Add coordinate systems and plane normal
+      //const axesHelperScene = new THREE.AxesHelper(5);
+      //gltfScene.add(axesHelperScene);
+      //gltfScene.add(positionalSound); //Sound wird hinzugefügt
+
+      let newClaptrap = gltfScene.getObjectByName("Body");
+      gNewClaptrap = newClaptrap;
+      //console.log(gBody);
+    }
+  );
+  return gNewClaptrap;
+}
 
 //Function to generate random direction vector for claptrap movement
 //not implemented yet, because animation code for the movement does crash the app
