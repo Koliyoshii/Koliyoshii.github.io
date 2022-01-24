@@ -83,116 +83,14 @@ function init() {
     "./claptrap.gltf",
     // called when the resource is loaded
     function (gltf) {
-      //console.log(gltf);
+      //Save the GLTF Scene in a global variable for cloning later
       gltfScene = gltf.scene;
-      gltfScene.scale.set(0.1, 0.1, 0.1); //scale 3D model
-      //let ClaptrapScene = gltfScene;
-      //let ClaptrapScene1 = gltf.scene.clone();
-      //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
-      //console.log(gltfScene);
-      // Add coordinate systems and plane normal
-      //const axesHelperScene = new THREE.AxesHelper(5);
-      //gltfScene.add(axesHelperScene);
+      gltfScene.scale.set(0.2, 0.2, 0.2); //scale 3D model
       //gltfScene.add(positionalSound); //Sound wird hinzugefügt
 
       gBody = gltfScene.getObjectByName("Body");
-      gBody.scale.set;
-      //console.log(gBody);
-      //claptraps.push(ClaptrapScene);
-      //claptraps.push(ClaptrapScene1);
-      //console.log(claptraps);
-      //console.log("update");
-
       //gArm = gltfScene.getObjectByName("Arme");
-      //console.log(gArm);
-      //position of the arms with regards to its body
-      //gArm.position.z = -0.1;
-      //gArm.position.y = 0.35;
-      //gArm.rotation.x = -3;
-
       //gTire = gltfScene.getObjectByName("Reifen");
-      //console.log(gTire);
-
-      //gBody.add(gTire);
-      //gBody.add(gArm);
-      //console.log(gBody);
-      //create an empty 'container'/Mesh
-      /* let claptrapContainer = new THREE.Object3D();
-      gBody.traverse(function (child) {
-        //console.log(child);
-        if (child.isMesh) {
-          claptrapContainer.add(child);
-        }
-      }); */
-      //console.log(claptrapContainer);
-      //console.log(gBody);
-
-      /* let counter = claptraps.push(gBody);
-      console.log("counter: " + counter);
-      claptraps.push(gBody);
-      console.log("Claptrap Array: " + claptraps);
-      console.log("Inhalt Array: " + claptraps[counter - 1]);
-
-      let newClaptrap = claptraps[counter - 1];
-      newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
-      console.log("New Claptrap: " + newClaptrap); */
-
-      /* gBody.traverse(function (child) {
-        if (child.isMesh) {
-          claptraps.push(child);
-          console.log("Claptrap Array: " + claptraps);
-        }
-      }); */
-
-      /* // Load Claptrap Tire
-      gltfLoader.load(
-        // resource URL
-        "./models/reifen.gltf",
-        // called when the resource is loaded
-        function (gltf) {
-          console.log(gltf);
-          const tire = gltf.scene;
-
-          //position of the tire with regards to its body
-          tire.position.y = -1.675;
-          tire.position.z = -0.03;
-
-          // Add coordinate systems and plane normal
-          const axesHelperScene = new THREE.AxesHelper(5); //Achsen werden angezeigt
-          tire.add(axesHelperScene);
-
-          //give global gTire the tire
-          gTire = gltf.scene;
-
-          //add the tire to the global claptrap model
-          gClaptrapModel.add(tire);
-        }
-      ); */
-
-      /* // Load Claptrap Arm
-      gltfLoader.load(
-        // resource URL
-        "./models/arm.gltf",
-        // called when the resource is loaded
-        function (gltf) {
-          console.log(gltf);
-          const arm = gltf.scene; //arm wird der Szene hinzugefügt
-
-          //position of the arm with regards to its body
-          arm.position.z = -0.1;
-          arm.position.y = 0.35;
-
-          // Add coordinate systems and plane normal
-          const axesHelperScene = new THREE.AxesHelper(10);
-          arm.add(axesHelperScene);
-
-          //give global gArm the arm
-          gArm = gltf.scene;
-
-          //add the arm to the global claptrap model
-          gClaptrapModel.add(arm);
-        }
-      ); */
     }
   );
 
@@ -250,21 +148,7 @@ function onSelect() {
     claptraps.push(newClaptrapScene);
     newClaptrapScene.position.setFromMatrixPosition(findTarget.matrix);
     scene.add(claptraps[claptraps.length - 1]);
-
-    /* let newClaptrap = Object.assign({}, gBody);
-    newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
-    newClaptrap.scale.set(0.05, 0.05, 0.05);
-    scene.add(newClaptrap); */
   }
-  /* if (reticle.visible) {
-    const material = new THREE.MeshPhongMaterial({
-      color: 0xffffff * Math.random(),
-    });
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.setFromMatrixPosition(reticle.matrix);
-    mesh.scale.y = Math.random() * 2 + 1;
-    scene.add(mesh);
-  } */
 } //end function onSelect
 
 //Function to generate random direction vector for claptrap movement
