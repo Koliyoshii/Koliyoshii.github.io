@@ -3,7 +3,7 @@ import { GLTFLoader } from "./GLTFLoader.js";
 import { ARButton } from "./ARButton.js";
 
 let gTire, gArm, gBody, gltfScene, renderer, light, camera, scene, mesh;
-let meshes = [];
+let claptraps = [];
 let container;
 let findTarget;
 let hitTestSource = null;
@@ -95,7 +95,7 @@ function init() {
       //gltfScene.add(axesHelperScene);
       //gltfScene.add(positionalSound); //Sound wird hinzugefügt
 
-      gBody = gltfScene.getObjectByName("Body");
+      /* gBody = gltfScene.getObjectByName("Body");
       gBody.scale.set;
       //console.log(gBody);
       let claptraps = [];
@@ -105,7 +105,7 @@ function init() {
       let clone = refObject;
       let newClaptrap = new claptrap();
       claptraps.push[newClaptrap];
-      console.log(claptraps);
+      console.log(claptraps); */
 
       //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
@@ -255,20 +255,11 @@ const geometry = new THREE.CylinderGeometry(0.1, 0.1, 0.2, 32).translate(
 //Function to spawn claptrap
 function onSelect() {
   if (findTarget.visible) {
-    // let counter = claptraps.push(gBody);
-    // console.log("counter: " + counter);
-    // console.log("Claptraps Array: " + claptraps);
-
-    // let newClaptrap = claptraps[counter - 1];
-    let claptraps = [];
-    let refObject = gBody;
-    let clone = refObject;
-    claptraps.push[clone];
-    let newClaptrap = claptraps[claptraps.length - 1];
-
-    newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
-    newClaptrap.scale.set(0.1, 0.1, 0.1);
-    scene.add(newClaptrap);
+    let newClaptrapScene = gltfScene.clone();
+    claptraps.push[newClaptrapScene];
+    newClaptrapScene.position.setFromMatrixPosition(findTarget.matrix);
+    newClaptrapScenescale.set(0.1, 0.1, 0.1);
+    scene.add(newClaptrapScene);
 
     /* let newClaptrap = Object.assign({}, gBody);
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
@@ -285,33 +276,6 @@ function onSelect() {
     scene.add(mesh);
   } */
 } //end function onSelect
-
-let gNewClaptrap;
-function claptrap() {
-  // GEOMETRY gltf Loader
-  const gltfLoader = new GLTFLoader();
-  gltfLoader.load(
-    // resource URL
-    "./claptrap.gltf",
-    // called when the resource is loaded
-    function (gltf) {
-      //console.log(gltf);
-      gltfScene = gltf.scene;
-      gltfScene.scale.set(0.01, 0.01, 0.01); //scale 3D model
-      //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
-      //console.log(gltfScene);
-      // Add coordinate systems and plane normal
-      //const axesHelperScene = new THREE.AxesHelper(5);
-      //gltfScene.add(axesHelperScene);
-      //gltfScene.add(positionalSound); //Sound wird hinzugefügt
-
-      let newClaptrap = gltfScene.getObjectByName("Body");
-      gNewClaptrap = newClaptrap;
-      //console.log(gBody);
-    }
-  );
-  return gNewClaptrap;
-}
 
 //Function to generate random direction vector for claptrap movement
 //not implemented yet, because animation code for the movement does crash the app
