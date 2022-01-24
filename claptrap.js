@@ -256,7 +256,7 @@ function onSelect() {
     claptraps.push[newClaptrapScene];
     newClaptrapScene.position.setFromMatrixPosition(findTarget.matrix);
     newClaptrapScene.scale.set(0.1, 0.1, 0.1);
-    scene.add(newClaptrapScene);
+    scene.add(claptraps[claptraps.legth - 1]);
 
     /* let newClaptrap = Object.assign({}, gBody);
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
