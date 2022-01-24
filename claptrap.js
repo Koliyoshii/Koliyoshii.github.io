@@ -85,9 +85,9 @@ function init() {
     function (gltf) {
       //console.log(gltf);
       gltfScene = gltf.scene;
-      gltfScene.scale.set(0.01, 0.01, 0.01); //scale 3D model
-      let ClaptrapScene = gltfScene;
-      let ClaptrapScene1 = gltf.scene.clone();
+      gltfScene.scale.set(0.1, 0.1, 0.1); //scale 3D model
+      //let ClaptrapScene = gltfScene;
+      //let ClaptrapScene1 = gltf.scene.clone();
       //gClaptrapModel.rotateY(Math.PI / 2); //rotate 180 degrees
       //console.log(gltfScene);
       // Add coordinate systems and plane normal
@@ -98,10 +98,10 @@ function init() {
       gBody = gltfScene.getObjectByName("Body");
       gBody.scale.set;
       //console.log(gBody);
-      claptraps.push(ClaptrapScene);
-      claptraps.push(ClaptrapScene1);
-      console.log(claptraps);
-      console.log("update");
+      //claptraps.push(ClaptrapScene);
+      //claptraps.push(ClaptrapScene1);
+      //console.log(claptraps);
+      //console.log("update");
 
       //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
