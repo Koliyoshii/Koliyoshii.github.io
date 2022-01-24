@@ -149,7 +149,7 @@ function onSelect() {
     claptraps.push[newClaptrapScene];
     //give the new Scene the position of findTarget (the ring for target Hitter)
     newClaptrapScene.position.setFromMatrixPosition(findTarget.matrix);
-    scene.add(claptraps[claptraps.legth - 1]);
+    scene.add(claptraps[claptraps.length - 1]);
   }
 } //end function onSelect
 
