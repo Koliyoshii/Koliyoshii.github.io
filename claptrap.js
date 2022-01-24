@@ -260,13 +260,13 @@ function onSelect() {
     newClaptrap.scale.set(0.05, 0.05, 0.05);
     scene.add(newClaptrap); */
 
-    /* const material = new THREE.MeshPhongMaterial({
+    const material = new THREE.MeshPhongMaterial({
       color: 0xffffff * Math.random(),
     });
     const mesh = new THREE.Mesh(geometry, material);
     mesh.position.setFromMatrixPosition(findTarget.matrix);
     mesh.scale.y = Math.random() * 2 + 1;
-    scene.add(mesh); */
+    scene.add(mesh);
   }
   /* if (reticle.visible) {
     const material = new THREE.MeshPhongMaterial({
