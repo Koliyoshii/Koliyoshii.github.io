@@ -94,6 +94,7 @@ function init() {
       //gltfScene.add(positionalSound); //Sound wird hinzugefügt
 
       gBody = gltfScene.getObjectByName("Body");
+      gBody.scale.set;
       console.log(gBody);
       //gArm = gltfScene.getObjectByName("Arme");
       //console.log(gArm);
@@ -254,7 +255,7 @@ function onSelect() {
     let newClaptrap = Object.assign({}, gBody);
 
     newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
-    newClaptrap.scale = 0.5;
+    newClaptrap.scale.set(0.1, 0.1, 0.1);
     scene.add(gBody);
 
     /* let newClaptrap = Object.assign({}, gBody);
