@@ -251,9 +251,10 @@ function onSelect() {
 
     var refObject = gBody;
     var clone = refObject;
+    let newClaptrap = Object.assign({}, gBody);
 
-    clone.position.setFromMatrixPosition(findTarget.matrix);
-    mesh.scale.y = Math.random() * 2 + 1;
+    newClaptrap.position.setFromMatrixPosition(findTarget.matrix);
+    newClaptrap.scale = 0.5;
     scene.add(gBody);
 
     /* let newClaptrap = Object.assign({}, gBody);
