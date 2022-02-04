@@ -48,6 +48,8 @@
 - [Web XR Device API](https://www.w3.org/TR/webxr/)
 - [three.js](https://threejs.org/)
 
+The application was developed and tested on the Android Chrome Browser Version 98 on a OnePlus 6 Android Device. The three.js Version number is r135 (<a href= https://github.com/mrdoob/three.js/releases>Check out three.js releases</a>).
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -68,7 +70,7 @@ Try out the application now on our Github Pages <a target="_blank" href="https:/
    ```sh
    git clone https://github.com/Koliyoshii/ECPShiftingShaders
    ```
-2. Open the index.html in a compatible Browser with https
+2. Open the index.html in a compatible Browser with HTTPS
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -76,7 +78,7 @@ Try out the application now on our Github Pages <a target="_blank" href="https:/
 
 ## Usage
 
-When the index.html is open you will see a Button "Start AR". If the button says "WebXR is not available" your Browser is propably not supported. Tap on the button to start the application. You can see now the image of the camera. The application will then do a Hit-test and search for surfaces like your ground or a table. If you have problems with finding a surface, make sure that there is enough light in your scene. Furthermore, use surfaces with a good amount of textures. When there finds a surface a circle will appear. Then tap on your screen to spawn a claptrap.
+When the index.html is open you will see a Button "Start AR". If the button says "WebXR is not available" your Browser is propably not supported. Tap on the button to start the application. You can see now the image of the camera. The application will then do a Hit-test and search for surfaces like your ground or a table. If you have problems with finding a surface, make sure that there is enough light in your real-life scene. Furthermore, use surfaces with a good amount of textures. If the applications finds a surface a circle will appear. Then tap on your screen to spawn a claptrap.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

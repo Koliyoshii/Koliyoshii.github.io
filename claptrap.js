@@ -74,7 +74,6 @@ function init() {
       gltfScene = gltf.scene;
       //Scale claptrap to 0.1. This value gives proper size for the claptrap in a small sized room.
       gltfScene.scale.set(0.1, 0.1, 0.1);
-      //gltfScene.children[0].children[0].rotation.x = -Math.PI / 2;
       console.log(gltfScene);
     }
   );
@@ -152,7 +151,7 @@ function draw(time, frame) {
   //check if claptraps objects exist in the claptraps[] array
   if (claptraps.length > 0) {
     claptraps.forEach((element) => {
-      //For each claptrap, get the Tire components and rotate them
+      //For each claptrap, get the Tire components (the Tire is the seventh children of the first children) and rotate them
       element.children[0].children[7].rotation.x += tireRotationSpeed; //"Reifen" is children Nr. 7
     });
   }
@@ -163,6 +162,7 @@ function draw(time, frame) {
   if (claptraps.length > 0) {
     //For each claptrap, get the Arm components and rotate them
     claptraps.forEach((element) => {
+      //get the Arm components (the Arm is the first children of the first children) and rotate them
       element.children[0].children[0].rotation.x =
         Math.sin(Date.now() * armMovementSpeed) * Math.PI * 0.3;
     });
