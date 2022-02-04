@@ -48,7 +48,7 @@
 - [Web XR Device API](https://www.w3.org/TR/webxr/)
 - [three.js](https://threejs.org/)
 
-The application was developed and tested on the Android Chrome Browser Version 98 on a OnePlus 6 Android Device. The three.js Version number is r135 (<a href= https://github.com/mrdoob/three.js/releases>Check out three.js releases</a>).
+The application was developed and tested on the Android Chrome Browser Version 98 on a OnePlus 6 Android Device. The three.js Version number is r135 (<a target="_blank" href= https://github.com/mrdoob/three.js/releases>Check out three.js releases</a>).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
