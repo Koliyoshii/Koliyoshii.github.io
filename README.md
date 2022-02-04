@@ -54,16 +54,13 @@
 
 ## Getting Started
 
-To start the project locally there is no further software installation required. Just clone the repository and open the index.html in an WebXR compatible Browser (a lot of Browsers are not compatible). You can find a list of compatible Browsers <a href="https://caniuse.com/webxr">here</a>.
+To start the project locally there is no further software installation required. Just clone the repository and open the index.html in an WebXR compatible Browser (a lot of Browsers are not compatible). You can find a list of compatible Browsers <a target="_blank" href="https://caniuse.com/webxr">here</a>.
 
-You will also need to start the application on an HTTPS Server. You can also set up HTTPS on your localhost. You can find Instructions of how to set up HTTPS on localhost for MacOS here:
-https://medium.com/@jonsamp/how-to-set-up-https-on-localhost-for-macos-b597bcf935ee
+You will also need to start the application on an HTTPS Server. You can also set up HTTPS on your localhost. You can find Instructions of how to set up HTTPS on localhost for MacOS <a target="_blank" href="https://medium.com/@jonsamp/how-to-set-up-https-on-localhost-for-macos-b597bcf935ee">here</a>.
 
-You can also load this Repository into your Github-Pages and start it there. You can find Instructions of how to set up Github-Pages here:
-https://pages.github.com/
+You can also load this Repository into your Github-Pages and start it there. You can find Instructions of how to set up Github-Pages <a target="_blank" href="https://pages.github.com/">here</a>.
 
-Try out the application now on our Github Pages:
-https://koliyoshii.github.io/
+Try out the application now on our Github Pages <a target="_blank" href="https://koliyoshii.github.io/">here</a>.
 
 ### Installation
 
