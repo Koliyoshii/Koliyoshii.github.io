@@ -36,9 +36,10 @@
 ## About The Project
 
 <div align="center">
-    <img src="images/screenshot.jpg.png" alt="Screenshot" width="200">
-    <p>This project is part of the course Real-Time Computer Graphics in the winter term 2021/22 at the Faculty of Digital Media at Furtwangen University. It is an AR application that runs in the browser via Web XR and is implemented using three.js. The goal is to spawn a 3D model from Blender via the GLTF loader of three.js into your local area and then animate it. The 3D Model is an Claptrap known from the game Borderlands, which was made in Blender.</p>
+    <img src="images/screenshot.jpg" alt="Screenshot" width="200">
 </div>
+
+<p align="left">This project is part of the course Real-Time Computer Graphics in the winter term 2021/22 at the Faculty of Digital Media at Furtwangen University. It is an AR application that runs in the browser via Web XR and is implemented using three.js. The goal is to spawn a 3D model from Blender via the GLTF loader of three.js into your local area and then animate it. The 3D Model is an Claptrap known from the game Borderlands, which was made in Blender.</p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
