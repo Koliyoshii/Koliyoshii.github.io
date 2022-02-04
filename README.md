@@ -54,18 +54,12 @@
 
 ## Getting Started
 
-To start the project locally there is no further software installation required. Just clone the repository and open the index.html in an WebXR compatible Browser (a lot of Browsers are not compatible).
+To start the project locally there is no further software installation required. Just clone the repository and open the index.html in an WebXR compatible Browser (a lot of Browsers are not compatible). You can find a list of compatible Browsers <a href="https://caniuse.com/webxr">here</a>.
 
-You can find a list of compatible Browsers here:
-https://caniuse.com/webxr
-
-You will also need to start the application on an HTTPS Server. You can also set up HTTPS on your localhost.
-
-You can find Instructions of how to set up HTTPS on localhost for MacOS here:
+You will also need to start the application on an HTTPS Server. You can also set up HTTPS on your localhost. You can find Instructions of how to set up HTTPS on localhost for MacOS here:
 https://medium.com/@jonsamp/how-to-set-up-https-on-localhost-for-macos-b597bcf935ee
 
-You can also load this Repository into your Github-Pages and start it there. Y
-ou can find Instructions of how to set up Github-Pages here:
+You can also load this Repository into your Github-Pages and start it there. You can find Instructions of how to set up Github-Pages here:
 https://pages.github.com/
 
 Try out the application now on our Github Pages:
@@ -85,7 +79,7 @@ https://koliyoshii.github.io/
 
 ## Usage
 
-When the index.html is open you will see a Button "Start AR". If the button says "WebXR is not available" your Browser is propably not supported. Tap on the button to start the application. You can see now the image of the camera. The application will then do a Hit-test and search for surfaces like your ground or a table. When there is a surface a circle will appear. Then tap on your screen to spawn a claptrap.
+When the index.html is open you will see a Button "Start AR". If the button says "WebXR is not available" your Browser is propably not supported. Tap on the button to start the application. You can see now the image of the camera. The application will then do a Hit-test and search for surfaces like your ground or a table. If you have problems with finding a surface, make sure that there is enough light in your scene. Furthermore, use surfaces with a good amount of textures. When there finds a surface a circle will appear. Then tap on your screen to spawn a claptrap.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -98,7 +92,3 @@ When the index.html is open you will see a Button "Start AR". If the button says
 - [Informations about the GLTF Loader](https://threejs.org/docs/#examples/en/loaders/GLTFLoader)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-
-[product-screenshot]: images/screenshot.jpg
