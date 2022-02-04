@@ -35,14 +35,14 @@ function init() {
 
   // LIGHTS
   // directional lighting
-  let color = 0xffffff;
-  let intensity = 0.7;
+  const color = 0xffffff;
+  const intensity = 0.7;
   light = new THREE.DirectionalLight(color, intensity);
   light.position.set(0, 30, 30);
   scene.add(light);
   // ambient lighting
-  let ambientColor = 0xaaaaff;
-  let ambientIntensity = 0.2;
+  const ambientColor = 0xaaaaff;
+  const ambientIntensity = 0.2;
   const ambientLight = new THREE.AmbientLight(ambientColor, ambientIntensity);
   scene.add(ambientLight);
 
@@ -72,8 +72,9 @@ function init() {
     function (gltf) {
       //Save the GLTF Scene in a global variable for cloning later
       gltfScene = gltf.scene;
-      gltfScene.scale.set(0.1, 0.1, 0.1); //scale 3D model
-      gltfScene.children[0].children[0].rotation.x = -Math.PI / 2;
+      //Scale claptrap to 0.1. This value gives proper size for the claptrap in a small sized room.
+      gltfScene.scale.set(0.1, 0.1, 0.1);
+      //gltfScene.children[0].children[0].rotation.x = -Math.PI / 2;
       console.log(gltfScene);
     }
   );
